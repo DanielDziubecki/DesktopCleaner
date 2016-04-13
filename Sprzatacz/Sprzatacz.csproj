@@ -111,9 +111,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\IconRestorer\IconRestorer.csproj">
       <Project>{30b76bb7-8f5b-4ad3-9222-8c19aa9bea85}</Project>
       <Name>IconRestorer</Name>

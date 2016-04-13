@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -41,7 +42,8 @@ namespace SegragatorPulpitu
         private IconRestorer.Code.IconRestorer iconRestorer;
         private bool loadDrives;
         private string mainfolderName;
-        private string mainfolderPath;
+        private readonly string mainFolderDestination = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        private string mainFolderFullPath;
         private Dictionary<string, string> oldAndNewPaths;
         private string selectedPath;
 
@@ -66,6 +68,11 @@ namespace SegragatorPulpitu
             }
 
             return result;
+        }
+
+        public void OpenSortedDirectory()
+        {
+            Process.Start("explorer.exe", mainFolderFullPath);
         }
 
         public HashSet<string> PobierzRozszerzeniaPlikow(string path)
@@ -95,7 +102,7 @@ namespace SegragatorPulpitu
 
         public void StworzFolderKopiiZapasowej()
         {
-            backupPath = Path.Combine(selectedPath, "Kopia zapasowa");
+            backupPath = Path.Combine(mainFolderDestination, "Kopia zapasowa");
             Directory.CreateDirectory(backupPath);
         }
 
@@ -105,11 +112,11 @@ namespace SegragatorPulpitu
             {
                 StworzFolderKopiiZapasowej();
             }
-            foreach (var rozszerzenieInazwa in rozszerzeniaZnazwaFolderu)
+            foreach (var rozszerzenieInazwaFolderu in rozszerzeniaZnazwaFolderu)
             {
-                var eachFolderPath = Path.Combine(mainfolderPath, rozszerzenieInazwa.Key);
+                var eachFolderPath = Path.Combine(mainFolderFullPath, rozszerzenieInazwaFolderu.Key);
                 Directory.CreateDirectory(eachFolderPath);
-                PrzeniesPliki(rozszerzenieInazwa.Key, rozszerzenieInazwa.Value);
+                PrzeniesPliki(rozszerzenieInazwaFolderu.Key, rozszerzenieInazwaFolderu.Value);
             }
         }
 
@@ -171,10 +178,10 @@ namespace SegragatorPulpitu
             return folderNameWithExtensions;
         }
 
-        private void PrzeniesPliki(string nazwaFolderu, IEnumerable<string> rozszerzenia)
+        private void PrzeniesPliki(string nestedFolderName, IEnumerable<string> rozszerzenia)
         {
-            var mainFolderPath = Path.Combine(selectedPath, mainfolderName);
-            var destinationFolderPath = Path.Combine(mainFolderPath, nazwaFolderu);
+           
+            var destinationNestedFolderPath = Path.Combine(mainFolderFullPath, nestedFolderName);
 
             foreach (var rozszerzenie in rozszerzenia)
             {
@@ -183,7 +190,7 @@ namespace SegragatorPulpitu
                 {
                     var pathLentgh = file.Split(Path.DirectorySeparatorChar).Length;
                     var fileName = file.Split(Path.DirectorySeparatorChar)[pathLentgh - 1];
-                    var fullFilePath = Path.Combine(destinationFolderPath, fileName);
+                    var fullFilePath = Path.Combine(destinationNestedFolderPath, fileName);
                     oldAndNewPaths.Add(file, fullFilePath);
                     if (cbKopiaZapasowa.Checked)
                     {
@@ -204,8 +211,6 @@ namespace SegragatorPulpitu
                 }
             }
             oldAndNewPaths.Clear();
-            if(Directory.Exists(mainfolderPath))
-            Directory.Delete(mainfolderPath,true);
         }
 
         private void PrzywrocUstawienieIkon()
@@ -227,8 +232,8 @@ namespace SegragatorPulpitu
                     return;
                 }
 
-                mainfolderPath = Path.Combine(selectedPath, mainfolderName);
-                if (Directory.Exists(mainfolderPath))
+                mainFolderFullPath = Path.Combine(mainFolderDestination, mainfolderName);
+                if (Directory.Exists(mainFolderFullPath))
                 {
                     MessageBox.Show(string.Format("Folder {0} już istnieje", mainfolderName));
                     return;
@@ -262,6 +267,7 @@ namespace SegragatorPulpitu
         private void btnSprzataj_Click(object sender, EventArgs e)
         {
             Sprzataj();
+            OpenSortedDirectory();
         }
 
         private void btnZapiszRozmieszczenie_Click(object sender, EventArgs e)
