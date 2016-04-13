@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTreeList;
@@ -195,11 +196,16 @@ namespace SegragatorPulpitu
 
         private void PrzywrocPliki()
         {
-            foreach (var paths in oldAndNewPaths.Where(paths => File.Exists(paths.Value)))
+            foreach (var paths in oldAndNewPaths)
             {
-                File.Move(paths.Value, paths.Key);
-                oldAndNewPaths.Remove(paths.Key);
+                if (File.Exists(paths.Value))
+                {
+                    File.Move(paths.Value, paths.Key);
+                }
             }
+            oldAndNewPaths.Clear();
+            if(Directory.Exists(mainfolderPath))
+            Directory.Delete(mainfolderPath,true);
         }
 
         private void PrzywrocUstawienieIkon()
@@ -249,6 +255,7 @@ namespace SegragatorPulpitu
         private void btnPrzywroc_Click(object sender, EventArgs e)
         {
             PrzywrocPliki();
+            Thread.Sleep(5000);
             PrzywrocUstawienieIkon();
         }
 
