@@ -1,0 +1,5 @@
+C:\Users\ddziub\Desktop\SegragatorPulpitu\IconRestorer\bin\Debug\IconRestorer.dll
+C:\Users\ddziub\Desktop\SegragatorPulpitu\IconRestorer\bin\Debug\IconRestorer.pdb
+C:\Users\ddziub\Desktop\SegragatorPulpitu\IconRestorer\obj\Debug\IconRestorer.csprojResolveAssemblyReference.cache
+C:\Users\ddziub\Desktop\SegragatorPulpitu\IconRestorer\obj\Debug\IconRestorer.dll
+C:\Users\ddziub\Desktop\SegragatorPulpitu\IconRestorer\obj\Debug\IconRestorer.pdb
