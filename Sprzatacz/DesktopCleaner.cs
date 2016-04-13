@@ -143,6 +143,7 @@ namespace SegragatorPulpitu
                 var foldersWithExtensions = GetSelectedExtensionsWithFolderNames();
                 CreateFolders(foldersWithExtensions);
                 Resfresh();
+                OpenSortedDirectory();
             }
             catch (Exception ex)
             {
@@ -259,14 +260,12 @@ namespace SegragatorPulpitu
         private void btnPrzywroc_Click(object sender, EventArgs e)
         {
             RestoreFiles();
-            Thread.Sleep(5000);
             RestoreIconArrangment();
         }
 
         private void btnSprzataj_Click(object sender, EventArgs e)
         {
             Clean();
-            OpenSortedDirectory();
         }
 
         private void btnZapiszRozmieszczenie_Click(object sender, EventArgs e)
