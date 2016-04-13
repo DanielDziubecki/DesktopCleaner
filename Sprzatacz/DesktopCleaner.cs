@@ -14,20 +14,20 @@ using SegragatorPulpitu.UI;
 
 namespace SegragatorPulpitu
 {
-    public partial class Sprzatacz : Form
+    public partial class DesktopCleaner : Form
     {
         #region Ini
 
-        public Sprzatacz()
+        public DesktopCleaner()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void DesktopCleaner_Load(object sender, EventArgs e)
         {
             treeListFileExplorer.DataSource = new object();
             selectedPath = DesktopPath;
-            Odswiez();
+            Resfresh();
             iconRestorer = new IconRestorer.Code.IconRestorer();
             iconRestorer.SavePositions();
             oldAndNewPaths = new Dictionary<string, string>();
@@ -38,18 +38,63 @@ namespace SegragatorPulpitu
         #region Fields
 
         private static readonly string DesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        private readonly string mainFolderDestination = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         private string backupPath;
         private IconRestorer.Code.IconRestorer iconRestorer;
         private bool loadDrives;
-        private string mainfolderName;
-        private readonly string mainFolderDestination = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         private string mainFolderFullPath;
+        private string mainfolderName;
         private Dictionary<string, string> oldAndNewPaths;
         private string selectedPath;
 
         #endregion
 
         #region Methods
+
+        public void CreateBackupFolder()
+        {
+            backupPath = Path.Combine(mainFolderDestination, "Kopia zapasowa");
+            Directory.CreateDirectory(backupPath);
+        }
+
+        public void CreateFolders(Dictionary<string, List<string>> folderNameWithExtensions)
+        {
+            if (cbKopiaZapasowa.Checked)
+            {
+                CreateBackupFolder();
+            }
+            foreach (var folderNameWithExtension in folderNameWithExtensions)
+            {
+                var eachFolderPath = Path.Combine(mainFolderFullPath, folderNameWithExtension.Key);
+                Directory.CreateDirectory(eachFolderPath);
+                TransferFiles(folderNameWithExtension.Key, folderNameWithExtension.Value);
+            }
+        }
+
+        public HashSet<string> GetFilesExtensions(string path)
+        {
+            var uniqueExtensions = new HashSet<string>();
+            try
+            {
+                var files = Directory.GetFiles(path);
+                foreach (var file in files)
+                {
+                    var fileName = file.Remove(0, path.Length + 1).ToLowerInvariant();
+                    if (!NotNeededExtensions.WrongFileExtension.Any(fileName.Contains))
+                    {
+                        var dots = fileName.Split('.');
+                        uniqueExtensions.Add(fileName.Split('.')[dots.Length - 1]);
+                    }
+                }
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                MessageBox.Show(e.Message, @"Błąd");
+            }
+
+
+            return uniqueExtensions;
+        }
 
         public string GetFullPath(TreeListNode node, string pathSeparator)
         {
@@ -75,52 +120,37 @@ namespace SegragatorPulpitu
             Process.Start("explorer.exe", mainFolderFullPath);
         }
 
-        public HashSet<string> PobierzRozszerzeniaPlikow(string path)
+        private void Clean()
         {
-            var uniqueExtensions = new HashSet<string>();
             try
             {
-                var files = Directory.GetFiles(path);
-                foreach (var file in files)
+                if (!string.IsNullOrEmpty(txtNazwaFolderuGlownego.Text))
                 {
-                    var fileName = file.Remove(0, path.Length + 1).ToLowerInvariant();
-                    if (!NotNeededExtensions.WrongFileExtension.Any(fileName.Contains))
-                    {
-                        var dots = fileName.Split('.');
-                        uniqueExtensions.Add(fileName.Split('.')[dots.Length - 1]);
-                    }
+                    mainfolderName = txtNazwaFolderuGlownego.Text;
                 }
+                else
+                {
+                    MessageBox.Show("Podaj nazwę folderu głównego");
+                    return;
+                }
+
+                mainFolderFullPath = Path.Combine(mainFolderDestination, mainfolderName);
+                if (Directory.Exists(mainFolderFullPath))
+                {
+                    MessageBox.Show(string.Format("Folder {0} już istnieje", mainfolderName));
+                    return;
+                }
+                var foldersWithExtensions = GetSelectedExtensionsWithFolderNames();
+                CreateFolders(foldersWithExtensions);
+                Resfresh();
             }
-            catch (UnauthorizedAccessException e)
+            catch (Exception ex)
             {
-                MessageBox.Show(e.Message, @"Błąd");
-            }
-
-
-            return uniqueExtensions;
-        }
-
-        public void StworzFolderKopiiZapasowej()
-        {
-            backupPath = Path.Combine(mainFolderDestination, "Kopia zapasowa");
-            Directory.CreateDirectory(backupPath);
-        }
-
-        public void StworzFoldery(Dictionary<string, List<string>> rozszerzeniaZnazwaFolderu)
-        {
-            if (cbKopiaZapasowa.Checked)
-            {
-                StworzFolderKopiiZapasowej();
-            }
-            foreach (var rozszerzenieInazwaFolderu in rozszerzeniaZnazwaFolderu)
-            {
-                var eachFolderPath = Path.Combine(mainFolderFullPath, rozszerzenieInazwaFolderu.Key);
-                Directory.CreateDirectory(eachFolderPath);
-                PrzeniesPliki(rozszerzenieInazwaFolderu.Key, rozszerzenieInazwaFolderu.Value);
+                MessageBox.Show(ex.Message, @"Wystąpił błąd");
             }
         }
 
-        private void GenerujKontrolki(HashSet<string> extensions)
+        private void GenerateControls(HashSet<string> extensions)
         {
             if (!extensions.Any())
                 return;
@@ -143,13 +173,7 @@ namespace SegragatorPulpitu
             layoutControl1.EndUpdate();
         }
 
-        private void Odswiez()
-        {
-            var rozszerzenia = PobierzRozszerzeniaPlikow(selectedPath);
-            GenerujKontrolki(rozszerzenia);
-        }
-
-        private Dictionary<string, List<string>> PobierzWybraneRozszerzeniaINazwyFolderow()
+        private Dictionary<string, List<string>> GetSelectedExtensionsWithFolderNames()
         {
             var folderNameWithExtensions = new Dictionary<string, List<string>>();
             foreach (var control in layoutControl1.Controls.OfType<ExtensionsAndFolderNames>())
@@ -178,15 +202,37 @@ namespace SegragatorPulpitu
             return folderNameWithExtensions;
         }
 
-        private void PrzeniesPliki(string nestedFolderName, IEnumerable<string> rozszerzenia)
+        private void Resfresh()
         {
-           
+            var extensions = GetFilesExtensions(selectedPath);
+            GenerateControls(extensions);
+        }
+
+        private void RestoreFiles()
+        {
+            foreach (var paths in oldAndNewPaths)
+            {
+                if (File.Exists(paths.Value))
+                {
+                    File.Move(paths.Value, paths.Key);
+                }
+            }
+            oldAndNewPaths.Clear();
+        }
+
+        private void RestoreIconArrangment()
+        {
+            iconRestorer.RestorePositions();
+        }
+
+        private void TransferFiles(string nestedFolderName, IEnumerable<string> extensions)
+        {
             var destinationNestedFolderPath = Path.Combine(mainFolderFullPath, nestedFolderName);
 
-            foreach (var rozszerzenie in rozszerzenia)
+            foreach (var extension in extensions)
             {
-                var plikiZrozszerzeniem = Directory.GetFiles(selectedPath, @"*." + rozszerzenie);
-                foreach (var file in plikiZrozszerzeniem)
+                var filesWithExtension = Directory.GetFiles(selectedPath, @"*." + extension);
+                foreach (var file in filesWithExtension)
                 {
                     var pathLentgh = file.Split(Path.DirectorySeparatorChar).Length;
                     var fileName = file.Split(Path.DirectorySeparatorChar)[pathLentgh - 1];
@@ -201,72 +247,25 @@ namespace SegragatorPulpitu
             }
         }
 
-        private void PrzywrocPliki()
-        {
-            foreach (var paths in oldAndNewPaths)
-            {
-                if (File.Exists(paths.Value))
-                {
-                    File.Move(paths.Value, paths.Key);
-                }
-            }
-            oldAndNewPaths.Clear();
-        }
-
-        private void PrzywrocUstawienieIkon()
-        {
-            iconRestorer.RestorePositions();
-        }
-
-        private void Sprzataj()
-        {
-            try
-            {
-                if (!string.IsNullOrEmpty(txtNazwaFolderuGlownego.Text))
-                {
-                    mainfolderName = txtNazwaFolderuGlownego.Text;
-                }
-                else
-                {
-                    MessageBox.Show("Podaj nazwę folderu głównego");
-                    return;
-                }
-
-                mainFolderFullPath = Path.Combine(mainFolderDestination, mainfolderName);
-                if (Directory.Exists(mainFolderFullPath))
-                {
-                    MessageBox.Show(string.Format("Folder {0} już istnieje", mainfolderName));
-                    return;
-                }
-                var folderyZrozszerzeniami = PobierzWybraneRozszerzeniaINazwyFolderow();
-                StworzFoldery(folderyZrozszerzeniami);
-                Odswiez();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, @"Wystąpił błąd");
-            }
-        }
-
         #endregion
 
         #region Actions
 
         private void btnOdswiez_Click(object sender, EventArgs e)
         {
-            Odswiez();
+            Resfresh();
         }
 
         private void btnPrzywroc_Click(object sender, EventArgs e)
         {
-            PrzywrocPliki();
+            RestoreFiles();
             Thread.Sleep(5000);
-            PrzywrocUstawienieIkon();
+            RestoreIconArrangment();
         }
 
         private void btnSprzataj_Click(object sender, EventArgs e)
         {
-            Sprzataj();
+            Clean();
             OpenSortedDirectory();
         }
 
@@ -279,8 +278,8 @@ namespace SegragatorPulpitu
         private void treeListFileExplorer_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
         {
             selectedPath = GetFullPath(e.Node, @"\");
-            var allExtensions = PobierzRozszerzeniaPlikow(selectedPath);
-            GenerujKontrolki(allExtensions);
+            var allExtensions = GetFilesExtensions(selectedPath);
+            GenerateControls(allExtensions);
         }
 
         private void treeListFileExplorer_VirtualTreeGetCellValue(object sender, VirtualTreeGetCellValueInfo e)

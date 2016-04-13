@@ -1,6 +1,6 @@
 ﻿namespace SegragatorPulpitu
 {
-    partial class Sprzatacz
+    partial class DesktopCleaner
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sprzatacz));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DesktopCleaner));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnSprzataj = new DevExpress.XtraEditors.SimpleButton();
             this.btnOdswiez = new DevExpress.XtraEditors.SimpleButton();
@@ -41,8 +41,6 @@
             this.treeListColumnFoldery = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.lcgKatalog = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.FileExplorer = new DevExpress.XtraLayout.LayoutControlItem();
             this.lcgRozszerzenia = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -55,6 +53,8 @@
             this.lciOdswiez = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
+            this.lcgKatalog = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.FileExplorer = new DevExpress.XtraLayout.LayoutControlItem();
             this.ListView = new DevExpress.XtraLayout.LayoutControlItem();
             this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Lastmodified = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -65,8 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.treeListFileExplorer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lcgKatalog)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FileExplorer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcgRozszerzenia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
@@ -79,6 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lciOdswiez)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcgKatalog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FileExplorer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,27 +211,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(802, 651);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // lcgKatalog
-            // 
-            this.lcgKatalog.ExpandButtonVisible = true;
-            this.lcgKatalog.Expanded = false;
-            this.lcgKatalog.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.FileExplorer});
-            this.lcgKatalog.Location = new System.Drawing.Point(473, 0);
-            this.lcgKatalog.Name = "lcgKatalog";
-            this.lcgKatalog.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.lcgKatalog.Size = new System.Drawing.Size(309, 631);
-            this.lcgKatalog.Text = "Wybierz inną scieżkę";
-            // 
-            // FileExplorer
-            // 
-            this.FileExplorer.Control = this.treeListFileExplorer;
-            this.FileExplorer.Location = new System.Drawing.Point(0, 0);
-            this.FileExplorer.Name = "FileExplorer";
-            this.FileExplorer.Size = new System.Drawing.Size(282, 603);
-            this.FileExplorer.TextSize = new System.Drawing.Size(0, 0);
-            this.FileExplorer.TextVisible = false;
-            // 
             // lcgRozszerzenia
             // 
             this.lcgRozszerzenia.Location = new System.Drawing.Point(0, 73);
@@ -341,6 +320,27 @@
             this.splitterItem1.Name = "splitterItem1";
             this.splitterItem1.Size = new System.Drawing.Size(5, 631);
             // 
+            // lcgKatalog
+            // 
+            this.lcgKatalog.ExpandButtonVisible = true;
+            this.lcgKatalog.Expanded = false;
+            this.lcgKatalog.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.FileExplorer});
+            this.lcgKatalog.Location = new System.Drawing.Point(473, 0);
+            this.lcgKatalog.Name = "lcgKatalog";
+            this.lcgKatalog.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.lcgKatalog.Size = new System.Drawing.Size(309, 631);
+            this.lcgKatalog.Text = "Wybierz inną scieżkę";
+            // 
+            // FileExplorer
+            // 
+            this.FileExplorer.Control = this.treeListFileExplorer;
+            this.FileExplorer.Location = new System.Drawing.Point(0, 0);
+            this.FileExplorer.Name = "FileExplorer";
+            this.FileExplorer.Size = new System.Drawing.Size(282, 603);
+            this.FileExplorer.TextSize = new System.Drawing.Size(0, 0);
+            this.FileExplorer.TextVisible = false;
+            // 
             // ListView
             // 
             this.ListView.Location = new System.Drawing.Point(0, 0);
@@ -348,7 +348,7 @@
             this.ListView.Size = new System.Drawing.Size(0, 0);
             this.ListView.TextSize = new System.Drawing.Size(50, 20);
             // 
-            // Sprzatacz
+            // DesktopCleaner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -356,9 +356,9 @@
             this.Controls.Add(this.layoutControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(727, 663);
-            this.Name = "Sprzatacz";
-            this.Text = "Sprzątacz beta v1.0";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "DesktopCleaner";
+            this.Text = "Desktop cleaner beta v1.0";
+            this.Load += new System.EventHandler(this.DesktopCleaner_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbKopiaZapasowa.Properties)).EndInit();
@@ -366,8 +366,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.treeListFileExplorer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lcgKatalog)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FileExplorer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcgRozszerzenia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
@@ -380,6 +378,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lciOdswiez)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcgKatalog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FileExplorer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListView)).EndInit();
             this.ResumeLayout(false);
 

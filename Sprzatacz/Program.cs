@@ -13,7 +13,7 @@ namespace SegragatorPulpitu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Sprzatacz());
+            Application.Run(new DesktopCleaner());
         }
     }
 }
