@@ -96,16 +96,16 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(632, 210, 480, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(802, 651);
+            this.layoutControl1.Size = new System.Drawing.Size(711, 674);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnSprzataj
             // 
             this.btnSprzataj.Image = global::SegragatorPulpitu.Properties.Resources.broom;
-            this.btnSprzataj.Location = new System.Drawing.Point(24, 523);
+            this.btnSprzataj.Location = new System.Drawing.Point(24, 546);
             this.btnSprzataj.Name = "btnSprzataj";
-            this.btnSprzataj.Size = new System.Drawing.Size(440, 38);
+            this.btnSprzataj.Size = new System.Drawing.Size(352, 38);
             this.btnSprzataj.StyleController = this.layoutControl1;
             this.btnSprzataj.TabIndex = 11;
             this.btnSprzataj.Text = "Sprzątaj!";
@@ -114,7 +114,7 @@
             // btnOdswiez
             // 
             this.btnOdswiez.Image = ((System.Drawing.Image)(resources.GetObject("btnOdswiez.Image")));
-            this.btnOdswiez.Location = new System.Drawing.Point(394, 24);
+            this.btnOdswiez.Location = new System.Drawing.Point(306, 24);
             this.btnOdswiez.Name = "btnOdswiez";
             this.btnOdswiez.Size = new System.Drawing.Size(70, 22);
             this.btnOdswiez.StyleController = this.layoutControl1;
@@ -129,16 +129,16 @@
             this.cbKopiaZapasowa.Name = "cbKopiaZapasowa";
             this.cbKopiaZapasowa.Properties.Caption = "Stwórz kopię zapasową";
             this.cbKopiaZapasowa.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.cbKopiaZapasowa.Size = new System.Drawing.Size(138, 19);
+            this.cbKopiaZapasowa.Size = new System.Drawing.Size(139, 19);
             this.cbKopiaZapasowa.StyleController = this.layoutControl1;
             this.cbKopiaZapasowa.TabIndex = 9;
             // 
             // btnZapiszRozmieszczenie
             // 
             this.btnZapiszRozmieszczenie.Image = ((System.Drawing.Image)(resources.GetObject("btnZapiszRozmieszczenie.Image")));
-            this.btnZapiszRozmieszczenie.Location = new System.Drawing.Point(36, 577);
+            this.btnZapiszRozmieszczenie.Location = new System.Drawing.Point(36, 600);
             this.btnZapiszRozmieszczenie.Name = "btnZapiszRozmieszczenie";
-            this.btnZapiszRozmieszczenie.Size = new System.Drawing.Size(268, 38);
+            this.btnZapiszRozmieszczenie.Size = new System.Drawing.Size(180, 38);
             this.btnZapiszRozmieszczenie.StyleController = this.layoutControl1;
             this.btnZapiszRozmieszczenie.TabIndex = 8;
             this.btnZapiszRozmieszczenie.Text = "Zapisz układ ikon na pulpicie";
@@ -148,26 +148,27 @@
             // 
             this.txtNazwaFolderuGlownego.Location = new System.Drawing.Point(146, 24);
             this.txtNazwaFolderuGlownego.Name = "txtNazwaFolderuGlownego";
-            this.txtNazwaFolderuGlownego.Size = new System.Drawing.Size(244, 20);
+            this.txtNazwaFolderuGlownego.Size = new System.Drawing.Size(156, 20);
             this.txtNazwaFolderuGlownego.StyleController = this.layoutControl1;
             this.txtNazwaFolderuGlownego.TabIndex = 6;
             // 
             // btnPrzywroc
             // 
             this.btnPrzywroc.Image = ((System.Drawing.Image)(resources.GetObject("btnPrzywroc.Image")));
-            this.btnPrzywroc.Location = new System.Drawing.Point(308, 577);
+            this.btnPrzywroc.Location = new System.Drawing.Point(220, 600);
             this.btnPrzywroc.Name = "btnPrzywroc";
             this.btnPrzywroc.Size = new System.Drawing.Size(144, 38);
             this.btnPrzywroc.StyleController = this.layoutControl1;
             this.btnPrzywroc.TabIndex = 5;
             this.btnPrzywroc.Text = "Przywróć pliki i układ";
+            this.btnPrzywroc.ToolTip = "Jeśli układ nie powrócił do swojego pierwotnego stanu kliknij ponownie.";
             this.btnPrzywroc.Click += new System.EventHandler(this.btnPrzywroc_Click);
             // 
             // treeListFileExplorer
             // 
             this.treeListFileExplorer.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.treeListColumnFoldery});
-            this.treeListFileExplorer.Location = new System.Drawing.Point(485, 12);
+            this.treeListFileExplorer.Location = new System.Drawing.Point(397, 12);
             this.treeListFileExplorer.Name = "treeListFileExplorer";
             this.treeListFileExplorer.OptionsBehavior.Editable = false;
             this.treeListFileExplorer.OptionsBehavior.ReadOnly = true;
@@ -208,7 +209,7 @@
             this.lcgKatalog});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(802, 651);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(711, 674);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // lcgRozszerzenia
@@ -216,7 +217,7 @@
             this.lcgRozszerzenia.Location = new System.Drawing.Point(0, 73);
             this.lcgRozszerzenia.Name = "lcgRozszerzenia";
             this.lcgRozszerzenia.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.lcgRozszerzenia.Size = new System.Drawing.Size(468, 426);
+            this.lcgRozszerzenia.Size = new System.Drawing.Size(380, 449);
             this.lcgRozszerzenia.TextVisible = false;
             // 
             // layoutControlGroup2
@@ -224,9 +225,9 @@
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup3,
             this.lciSprzataj});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 499);
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 522);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(468, 132);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(380, 132);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlGroup3
@@ -236,7 +237,7 @@
             this.lciPrzywroc});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 42);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(444, 66);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(356, 66);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // lciZapiszRozmieszczenie
@@ -244,14 +245,14 @@
             this.lciZapiszRozmieszczenie.Control = this.btnZapiszRozmieszczenie;
             this.lciZapiszRozmieszczenie.Location = new System.Drawing.Point(0, 0);
             this.lciZapiszRozmieszczenie.Name = "lciZapiszRozmieszczenie";
-            this.lciZapiszRozmieszczenie.Size = new System.Drawing.Size(272, 42);
+            this.lciZapiszRozmieszczenie.Size = new System.Drawing.Size(184, 42);
             this.lciZapiszRozmieszczenie.TextSize = new System.Drawing.Size(0, 0);
             this.lciZapiszRozmieszczenie.TextVisible = false;
             // 
             // lciPrzywroc
             // 
             this.lciPrzywroc.Control = this.btnPrzywroc;
-            this.lciPrzywroc.Location = new System.Drawing.Point(272, 0);
+            this.lciPrzywroc.Location = new System.Drawing.Point(184, 0);
             this.lciPrzywroc.Name = "lciPrzywroc";
             this.lciPrzywroc.Size = new System.Drawing.Size(148, 42);
             this.lciPrzywroc.TextSize = new System.Drawing.Size(0, 0);
@@ -262,7 +263,7 @@
             this.lciSprzataj.Control = this.btnSprzataj;
             this.lciSprzataj.Location = new System.Drawing.Point(0, 0);
             this.lciSprzataj.Name = "lciSprzataj";
-            this.lciSprzataj.Size = new System.Drawing.Size(444, 42);
+            this.lciSprzataj.Size = new System.Drawing.Size(356, 42);
             this.lciSprzataj.TextSize = new System.Drawing.Size(0, 0);
             this.lciSprzataj.TextVisible = false;
             // 
@@ -275,7 +276,7 @@
             this.emptySpaceItem1});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(468, 73);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(380, 73);
             this.layoutControlGroup4.TextVisible = false;
             // 
             // lciKopiaZapasowa
@@ -283,7 +284,7 @@
             this.lciKopiaZapasowa.Control = this.cbKopiaZapasowa;
             this.lciKopiaZapasowa.Location = new System.Drawing.Point(0, 26);
             this.lciKopiaZapasowa.Name = "lciKopiaZapasowa";
-            this.lciKopiaZapasowa.Size = new System.Drawing.Size(142, 23);
+            this.lciKopiaZapasowa.Size = new System.Drawing.Size(143, 23);
             this.lciKopiaZapasowa.TextSize = new System.Drawing.Size(0, 0);
             this.lciKopiaZapasowa.TextVisible = false;
             // 
@@ -292,14 +293,14 @@
             this.lciNazwaFolderuGlownego.Control = this.txtNazwaFolderuGlownego;
             this.lciNazwaFolderuGlownego.Location = new System.Drawing.Point(0, 0);
             this.lciNazwaFolderuGlownego.Name = "lciNazwaFolderuGlownego";
-            this.lciNazwaFolderuGlownego.Size = new System.Drawing.Size(370, 26);
+            this.lciNazwaFolderuGlownego.Size = new System.Drawing.Size(282, 26);
             this.lciNazwaFolderuGlownego.Text = "Nazwa folderu głównego";
             this.lciNazwaFolderuGlownego.TextSize = new System.Drawing.Size(119, 13);
             // 
             // lciOdswiez
             // 
             this.lciOdswiez.Control = this.btnOdswiez;
-            this.lciOdswiez.Location = new System.Drawing.Point(370, 0);
+            this.lciOdswiez.Location = new System.Drawing.Point(282, 0);
             this.lciOdswiez.Name = "lciOdswiez";
             this.lciOdswiez.Size = new System.Drawing.Size(74, 26);
             this.lciOdswiez.TextSize = new System.Drawing.Size(0, 0);
@@ -308,17 +309,17 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(142, 26);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(143, 26);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(302, 23);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(213, 23);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // splitterItem1
             // 
             this.splitterItem1.AllowHotTrack = true;
-            this.splitterItem1.Location = new System.Drawing.Point(468, 0);
+            this.splitterItem1.Location = new System.Drawing.Point(380, 0);
             this.splitterItem1.Name = "splitterItem1";
-            this.splitterItem1.Size = new System.Drawing.Size(5, 631);
+            this.splitterItem1.Size = new System.Drawing.Size(5, 654);
             // 
             // lcgKatalog
             // 
@@ -326,10 +327,10 @@
             this.lcgKatalog.Expanded = false;
             this.lcgKatalog.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.FileExplorer});
-            this.lcgKatalog.Location = new System.Drawing.Point(473, 0);
+            this.lcgKatalog.Location = new System.Drawing.Point(385, 0);
             this.lcgKatalog.Name = "lcgKatalog";
             this.lcgKatalog.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.lcgKatalog.Size = new System.Drawing.Size(309, 631);
+            this.lcgKatalog.Size = new System.Drawing.Size(306, 654);
             this.lcgKatalog.Text = "Wybierz inną scieżkę";
             // 
             // FileExplorer
@@ -352,8 +353,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 651);
+            this.ClientSize = new System.Drawing.Size(711, 674);
             this.Controls.Add(this.layoutControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(727, 663);
             this.Name = "DesktopCleaner";

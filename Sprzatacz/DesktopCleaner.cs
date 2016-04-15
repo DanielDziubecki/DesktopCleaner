@@ -5,7 +5,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTreeList;
@@ -238,7 +237,9 @@ namespace SegragatorPulpitu
                     var pathLentgh = file.Split(Path.DirectorySeparatorChar).Length;
                     var fileName = file.Split(Path.DirectorySeparatorChar)[pathLentgh - 1];
                     var fullFilePath = Path.Combine(destinationNestedFolderPath, fileName);
-                    oldAndNewPaths.Add(file, fullFilePath);
+                    if (!oldAndNewPaths.ContainsKey(file))
+                        oldAndNewPaths.Add(file, fullFilePath);
+
                     if (cbKopiaZapasowa.Checked)
                     {
                         File.Copy(file, Path.Combine(backupPath, fileName));
@@ -271,7 +272,7 @@ namespace SegragatorPulpitu
         private void btnZapiszRozmieszczenie_Click(object sender, EventArgs e)
         {
             iconRestorer.SavePositions();
-            MessageBox.Show("Zapisano");
+            MessageBox.Show("Zapisano układ");
         }
 
         private void treeListFileExplorer_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
