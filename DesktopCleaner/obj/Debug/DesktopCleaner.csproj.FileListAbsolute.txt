@@ -26,3 +26,17 @@ E:\Research\Repozytorium\Sprzatacz\DesktopCleaner\obj\Debug\DesktopCleaner.cspro
 E:\Research\Repozytorium\Sprzatacz\DesktopCleaner\obj\Debug\SegragatorPulpitu.exe.licenses
 E:\Research\Repozytorium\Sprzatacz\DesktopCleaner\obj\Debug\SegragatorPulpitu.exe
 E:\Research\Repozytorium\Sprzatacz\DesktopCleaner\obj\Debug\SegragatorPulpitu.pdb
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\bin\Debug\SegragatorPulpitu.exe.config
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\obj\Debug\SegragatorPulpitu.exe
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\obj\Debug\SegragatorPulpitu.pdb
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\bin\Debug\SegragatorPulpitu.exe
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\bin\Debug\SegragatorPulpitu.pdb
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\bin\Debug\IconRestorer.dll
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\bin\Debug\IconRestorer.pdb
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\obj\Debug\DesktopCleaner.csprojResolveAssemblyReference.cache
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\obj\Debug\SegragatorPulpitu.DesktopCleaner.resources
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\obj\Debug\SegragatorPulpitu.Properties.Resources.resources
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\obj\Debug\SegragatorPulpitu.UI.ExtensionsAndFolderNames.resources
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\obj\Debug\SegragatorPulpitu.UI.Labels.resources
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\obj\Debug\DesktopCleaner.csproj.GenerateResource.Cache
+E:\Research\Repozytorium\DesktopCleaner\DesktopCleaner\obj\Debug\SegragatorPulpitu.exe.licenses

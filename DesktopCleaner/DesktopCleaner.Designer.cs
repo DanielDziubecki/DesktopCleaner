@@ -102,7 +102,7 @@
             // 
             // btnSprzataj
             // 
-            this.btnSprzataj.Image = global::SegragatorPulpitu.Properties.Resources.broom;
+            this.btnSprzataj.Image = global::SegragatorPulpitu.Properties.Resources.broom_32x32;
             this.btnSprzataj.Location = new System.Drawing.Point(24, 546);
             this.btnSprzataj.Name = "btnSprzataj";
             this.btnSprzataj.Size = new System.Drawing.Size(352, 38);

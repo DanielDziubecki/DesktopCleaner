@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconRestorer", "IconRestore
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopCleaner", "DesktopCleaner\DesktopCleaner.csproj", "{AB9918C3-F432-4651-869F-72D0CD2FAFEC}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DesktopCleanerSetup", "DesktopCleanerSetup\DesktopCleanerSetup.vdproj", "{C61636A1-BC5A-4D11-A8AF-AA3ECA9D1EF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{AB9918C3-F432-4651-869F-72D0CD2FAFEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB9918C3-F432-4651-869F-72D0CD2FAFEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB9918C3-F432-4651-869F-72D0CD2FAFEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61636A1-BC5A-4D11-A8AF-AA3ECA9D1EF9}.Debug|Any CPU.ActiveCfg = Debug
+		{C61636A1-BC5A-4D11-A8AF-AA3ECA9D1EF9}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

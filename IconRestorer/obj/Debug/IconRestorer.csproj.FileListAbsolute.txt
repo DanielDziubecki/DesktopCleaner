@@ -8,3 +8,7 @@ E:\Research\Repozytorium\Sprzatacz\IconRestorer\bin\Debug\IconRestorer.pdb
 E:\Research\Repozytorium\Sprzatacz\IconRestorer\obj\Debug\IconRestorer.dll
 E:\Research\Repozytorium\Sprzatacz\IconRestorer\obj\Debug\IconRestorer.pdb
 E:\Research\Repozytorium\Sprzatacz\IconRestorer\obj\Debug\IconRestorer.csprojResolveAssemblyReference.cache
+E:\Research\Repozytorium\DesktopCleaner\IconRestorer\bin\Debug\IconRestorer.dll
+E:\Research\Repozytorium\DesktopCleaner\IconRestorer\bin\Debug\IconRestorer.pdb
+E:\Research\Repozytorium\DesktopCleaner\IconRestorer\obj\Debug\IconRestorer.dll
+E:\Research\Repozytorium\DesktopCleaner\IconRestorer\obj\Debug\IconRestorer.pdb
