@@ -1,0 +1,23 @@
+c:\users\daniel\documents\visual studio 2013\Projects\SegragatorPulpitu\SegragatorPulpitu\bin\Debug\SegragatorPulpitu.exe.config
+c:\users\daniel\documents\visual studio 2013\Projects\SegragatorPulpitu\SegragatorPulpitu\bin\Debug\SegragatorPulpitu.exe
+c:\users\daniel\documents\visual studio 2013\Projects\SegragatorPulpitu\SegragatorPulpitu\bin\Debug\SegragatorPulpitu.pdb
+c:\users\daniel\documents\visual studio 2013\Projects\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.csprojResolveAssemblyReference.cache
+c:\users\daniel\documents\visual studio 2013\Projects\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.Form1.resources
+c:\users\daniel\documents\visual studio 2013\Projects\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.Properties.Resources.resources
+c:\users\daniel\documents\visual studio 2013\Projects\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.csproj.GenerateResource.Cache
+c:\users\daniel\documents\visual studio 2013\Projects\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.exe
+c:\users\daniel\documents\visual studio 2013\Projects\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.pdb
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.csprojResolveAssemblyReference.cache
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.Properties.Resources.resources
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.csproj.GenerateResource.Cache
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.exe
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\bin\Debug\SegragatorPulpitu.exe.config
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\bin\Debug\SegragatorPulpitu.exe
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\bin\Debug\SegragatorPulpitu.pdb
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.pdb
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.exe.licenses
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.UI.ExtensionsAndFolderNames.resources
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.UI.Labels.resources
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\bin\Debug\IconRestorer.dll
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\bin\Debug\IconRestorer.pdb
+C:\Users\ddziub\Desktop\SegragatorPulpitu\SegragatorPulpitu\obj\Debug\SegragatorPulpitu.Sprzatacz.resources
